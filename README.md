@@ -5,6 +5,8 @@
 - GitHub: https://github.com/dexorynLabs
 - X (Twitter): https://x.com/dexoryn
 
+For the latest, more effective version of the bot or help running it, please contact the links above.
+
 Advanced automated copy trading bot for Polymarket prediction markets. Monitors whale wallets and copies their trades with intelligent position sizing, adaptive take-profit, and trailing stop-loss protection.
 
 ## ✨ Features
