@@ -55,8 +55,16 @@ cp env.example .env
 # Add whale wallets, adjust stake sizes, set limits
 cp config.example.json config.json
 
-# Build and run
+# Build
 npm run build
+
+# Check if account is ready for trading
+npm run cli check-ready
+
+# Set trading allowances (required once)
+npm run cli set-allowances
+
+# Start the bot
 npm run bot
 ```
 
@@ -148,7 +156,12 @@ DEBUG=false                         # Enable verbose logging
 | Command | Description |
 |---------|-------------|
 | `npm run bot` | Start the trading bot |
-| `npm run balance` | Check wallet balance and positions |
+| `npm run cli check-ready` | Check if account is ready for trading (balances, allowances) |
+| `npm run cli set-allowances` | Set trading allowances via relayer (one-time setup) |
+| `npm run cli balance` | Check wallet balance and positions |
+| `npm run cli wallets add <address>` | Add a whale wallet to track |
+| `npm run cli wallets list` | List all tracked wallets |
+| `npm run cli close-all` | Close all open positions (market sell) |
 | `npm run build` | Compile TypeScript to JavaScript |
 | `npm run dev` | Development mode with hot reload |
 | `npm run clean` | Remove compiled files |
@@ -177,6 +190,45 @@ src/
 - **Polymarket Account** with USDC funded
 - **MetaMask Wallet** linked to Polymarket
 - **Private Key** exported from MetaMask
+- **Trading Allowances** set for exchange contracts (see Setup below)
+
+## 🔧 Account Setup
+
+### Step 1: Set Trading Allowances
+
+Before trading, you need to set allowances so the exchange contracts can spend your tokens:
+
+**Option A: Via Relayer (Recommended)**
+```bash
+npm run cli set-allowances
+```
+
+**Option B: Manual Setup**
+1. Go to https://polymarket.com
+2. Connect your wallet
+3. Make a small test trade (this will prompt for all required approvals)
+4. Approve all requested permissions
+
+**Option C: Check Current Status**
+```bash
+npm run cli check-ready
+```
+
+This command verifies:
+- ✅ Wallet initialization
+- ✅ CLOB client authentication
+- ✅ USDC balance in Polymarket
+- ✅ All required allowances (USDC and CTF tokens)
+
+### Step 2: Verify Setup
+
+Run the readiness check to ensure everything is configured:
+
+```bash
+npm run cli check-ready
+```
+
+If all checks pass, you're ready to start trading!
 
 ## 🐛 Troubleshooting
 
@@ -187,9 +239,15 @@ src/
 - Rebuild: `npm run build`
 
 **"Not enough balance"**
-- Check balance: `npm run balance`
+- Check balance: `npm run cli balance`
 - Deposit more USDC to Polymarket
 - Lower `min_stake` in config.json
+
+**"Invalid authorization" or "Allowances not set"**
+- Check trading readiness: `npm run cli check-ready`
+- Set allowances: `npm run cli set-allowances`
+- If relayer fails, set allowances manually on polymarket.com
+- Make a small test trade on polymarket.com to trigger approval prompts
 
 **"Position likely closed"**
 - Take-profit already executed by smart contract
@@ -199,6 +257,11 @@ src/
 **"502/503 CLOB errors"**
 - Automatic retry logic handles temporary API issues
 - If persistent, check Polymarket API status
+
+**"CLOB client not authenticated"**
+- Wallet may need registration on polymarket.com
+- Try making a trade on the website first
+- Check that PRIVATE_KEY and FUNDER_ADDRESS are set correctly
 
 ## ⚠️ Risk Warning
 
@@ -221,12 +284,14 @@ Issues and pull requests welcome! Please test thoroughly before submitting.
 
 ## 💡 Tips
 
+- **Before starting**: Always run `npm run cli check-ready` to verify setup
 - Start with `min_stake: 7` and `max_stake: 50` until comfortable
 - Enable stop-loss initially: `stop_loss_enabled: true`
 - Track 2-3 whales maximum to start
 - Monitor first few days closely
 - Keep at least 2x `max_stake` in balance for opportunities
 - Sports markets are more volatile — use with caution
+- If allowances fail via relayer, set them manually on polymarket.com
 
 ## 📈 Roadmap
 

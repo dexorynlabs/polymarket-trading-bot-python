@@ -100,6 +100,78 @@ program
     }
   });
 
+// Check Trading Readiness command
+program
+  .command('check-ready')
+  .alias('ready')
+  .description('Check if your account is ready for trading (balances, allowances, etc.)')
+  .action(async () => {
+    if (!process.env.PRIVATE_KEY) {
+      console.error('❌ PRIVATE_KEY not found in .env file!');
+      console.log('\n💡 Add your private key to .env:');
+      console.log('   PRIVATE_KEY=0xYourPrivateKeyHere\n');
+      process.exit(1);
+    }
+
+    try {
+      console.log('🔍 Checking trading readiness...\n');
+      const wallet = await initializeWallet();
+      const status = await wallet.checkTradingReadiness();
+
+      console.log('═══════════════════════════════════════════════════════');
+      console.log('           TRADING READINESS CHECK');
+      console.log('═══════════════════════════════════════════════════════\n');
+
+      // Wallet status
+      console.log('📝 Wallet Configuration:');
+      console.log(`   Initialized: ${status.details.walletInitialized ? '✅ Yes' : '❌ No'}`);
+      console.log(`   CLOB Client: ${status.details.clobClientReady ? '✅ Ready' : '❌ Not ready'}`);
+      console.log(`   Funder Address: ${status.details.funderAddress || 'Not set'}\n`);
+
+      // Balance
+      console.log('💰 Balance:');
+      console.log(`   Polymarket USDC: $${status.details.balance.toFixed(2)}`);
+      console.log(`   Status: ${status.details.hasBalance ? '✅ Sufficient' : '❌ No balance'}\n`);
+
+      // Allowances
+      console.log('🔐 Allowances Status:\n');
+      
+      console.log('   CTF Exchange:');
+      console.log(`      USDC: ${status.details.allowances.ctfExchange.usdc ? '✅ Approved' : '❌ Missing'}`);
+      console.log(`      CTF Tokens: ${status.details.allowances.ctfExchange.ctf ? '✅ Approved' : '❌ Missing'}\n`);
+
+      console.log('   Neg Risk Exchange:');
+      console.log(`      USDC: ${status.details.allowances.negRiskExchange.usdc ? '✅ Approved' : '❌ Missing'}`);
+      console.log(`      CTF Tokens: ${status.details.allowances.negRiskExchange.ctf ? '✅ Approved' : '❌ Missing'}\n`);
+
+      console.log('   Neg Risk Adapter:');
+      console.log(`      USDC: ${status.details.allowances.negRiskAdapter.usdc ? '✅ Approved' : '❌ Missing'}`);
+      console.log(`      CTF Tokens: ${status.details.allowances.negRiskAdapter.ctf ? '✅ Approved' : '❌ Missing'}\n`);
+
+      // Overall status
+      console.log('═══════════════════════════════════════════════════════');
+      if (status.ready) {
+        console.log('✅ READY TO TRADE!');
+        console.log('   All requirements are met. You can start the bot.\n');
+      } else {
+        console.log('❌ NOT READY TO TRADE');
+        console.log('\n📋 Issues found:\n');
+        status.issues.forEach((issue, index) => {
+          console.log(`   ${index + 1}. ${issue}`);
+        });
+        console.log('\n💡 To fix:');
+        console.log('   - Set allowances: npm run cli set-allowances');
+        console.log('   - Or set manually on polymarket.com\n');
+      }
+      console.log('═══════════════════════════════════════════════════════\n');
+
+      process.exit(status.ready ? 0 : 1);
+    } catch (error: any) {
+      console.error('❌ Error:', error.message);
+      process.exit(1);
+    }
+  });
+
 // Config command
 program
   .command('config')

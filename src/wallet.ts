@@ -70,6 +70,18 @@ const ERC20_ABI = [
   'function allowance(address,address) view returns (uint256)',
 ];
 
+const ERC1155_ABI = [
+  'function isApprovedForAll(address account, address operator) view returns (bool)',
+];
+
+// Exchange contracts that need approvals
+const EXCHANGE_CONTRACTS = {
+  CTF_EXCHANGE: '0x4bFb41d5B3570DeFd03C39a9A4D8dE6Bd8B8982E',
+  NEG_RISK_EXCHANGE: '0xC5d563A36AE78145C45a50134d48A1215220f80a',
+  NEG_RISK_ADAPTER: '0xd91E80cF2E7be2e162c6513ceD06f1dD0dA35296',
+  CTF: '0x4D97DCd97eC945f40cF65F87097ACe5EA0476045',
+};
+
 const PROXY_FACTORY_ABI = [
   'function getPolyProxy(address) view returns (address)',
 ];
@@ -406,6 +418,136 @@ export class WalletManager {
     const balance = await this.getBalance();
     const totalUsdc = balance.usdcWallet + balance.usdcProxy + balance.polymarketBalance;
     return totalUsdc >= requiredUsdc;
+  }
+
+  /**
+   * Check if account is ready for trading
+   * Returns detailed status of all requirements
+   */
+  async checkTradingReadiness(): Promise<{
+    ready: boolean;
+    issues: string[];
+    details: {
+      walletInitialized: boolean;
+      clobClientReady: boolean;
+      hasBalance: boolean;
+      balance: number;
+      allowances: {
+        ctfExchange: { usdc: boolean; ctf: boolean };
+        negRiskExchange: { usdc: boolean; ctf: boolean };
+        negRiskAdapter: { usdc: boolean; ctf: boolean };
+      };
+      funderAddress: string | null;
+    };
+  }> {
+    const issues: string[] = [];
+    const details: any = {
+      walletInitialized: this.initialized,
+      clobClientReady: false,
+      hasBalance: false,
+      balance: 0,
+      allowances: {
+        ctfExchange: { usdc: false, ctf: false },
+        negRiskExchange: { usdc: false, ctf: false },
+        negRiskAdapter: { usdc: false, ctf: false },
+      },
+      funderAddress: this.proxyAddress,
+    };
+
+    // Check wallet initialization
+    if (!this.initialized) {
+      issues.push('Wallet not initialized - call initialize() first');
+    }
+
+    // Check CLOB client
+    if (!this.authClient) {
+      issues.push('CLOB client not authenticated - API credentials missing');
+    } else {
+      details.clobClientReady = true;
+    }
+
+    // Check funder address
+    const funderAddress = this.proxyAddress || this.wallet.address;
+    if (!funderAddress) {
+      issues.push('Funder address not set');
+    }
+
+    // Check balance
+    try {
+      const balanceInfo = await this.getPolymarketBalance(true); // Force refresh
+      details.balance = balanceInfo.balance;
+      details.hasBalance = balanceInfo.balance > 0;
+
+      if (balanceInfo.balance === 0) {
+        issues.push('No USDC balance in Polymarket - deposit funds first');
+      }
+
+      // Check allowances via API
+      details.allowances.ctfExchange.usdc = balanceInfo.allowanceCTF > 0;
+      details.allowances.negRiskExchange.usdc = balanceInfo.allowanceNegRisk > 0;
+    } catch (error: any) {
+      issues.push(`Failed to check balance: ${error.message}`);
+    }
+
+    // Check on-chain allowances for funder address
+    if (funderAddress) {
+      try {
+        const usdcContract = new Contract(USDC_ADDRESS, ERC20_ABI, this.provider);
+        const ctfContract = new Contract(EXCHANGE_CONTRACTS.CTF, ERC1155_ABI, this.provider);
+
+        // Check USDC allowances
+        const [ctfUsdc, negRiskUsdc, adapterUsdc] = await Promise.all([
+          usdcContract.allowance(funderAddress, EXCHANGE_CONTRACTS.CTF_EXCHANGE).catch(() => BigNumber.from(0)),
+          usdcContract.allowance(funderAddress, EXCHANGE_CONTRACTS.NEG_RISK_EXCHANGE).catch(() => BigNumber.from(0)),
+          usdcContract.allowance(funderAddress, EXCHANGE_CONTRACTS.NEG_RISK_ADAPTER).catch(() => BigNumber.from(0)),
+        ]);
+
+        details.allowances.ctfExchange.usdc = ctfUsdc.gt(0);
+        details.allowances.negRiskExchange.usdc = negRiskUsdc.gt(0);
+        details.allowances.negRiskAdapter.usdc = adapterUsdc.gt(0);
+
+        // Check CTF token approvals
+        const [ctfCtf, negRiskCtf, adapterCtf] = await Promise.all([
+          ctfContract.isApprovedForAll(funderAddress, EXCHANGE_CONTRACTS.CTF_EXCHANGE).catch(() => false),
+          ctfContract.isApprovedForAll(funderAddress, EXCHANGE_CONTRACTS.NEG_RISK_EXCHANGE).catch(() => false),
+          ctfContract.isApprovedForAll(funderAddress, EXCHANGE_CONTRACTS.NEG_RISK_ADAPTER).catch(() => false),
+        ]);
+
+        details.allowances.ctfExchange.ctf = ctfCtf;
+        details.allowances.negRiskExchange.ctf = negRiskCtf;
+        details.allowances.negRiskAdapter.ctf = adapterCtf;
+
+        // Add specific allowance issues
+        if (!details.allowances.ctfExchange.usdc) {
+          issues.push('USDC allowance missing for CTF Exchange');
+        }
+        if (!details.allowances.ctfExchange.ctf) {
+          issues.push('CTF token approval missing for CTF Exchange');
+        }
+        if (!details.allowances.negRiskExchange.usdc) {
+          issues.push('USDC allowance missing for Neg Risk Exchange');
+        }
+        if (!details.allowances.negRiskExchange.ctf) {
+          issues.push('CTF token approval missing for Neg Risk Exchange');
+        }
+        if (!details.allowances.negRiskAdapter.usdc) {
+          issues.push('USDC allowance missing for Neg Risk Adapter');
+        }
+        if (!details.allowances.negRiskAdapter.ctf) {
+          issues.push('CTF token approval missing for Neg Risk Adapter');
+        }
+      } catch (error: any) {
+        issues.push(`Failed to check on-chain allowances: ${error.message}`);
+      }
+    }
+
+    const ready = issues.length === 0;
+
+    return {
+      ready,
+      issues,
+      details,
+    };
   }
 }
 
