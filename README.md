@@ -109,54 +109,12 @@ While other Polymarket bots show screenshots or claim profitability, **this Poly
 - **Users unwilling to learn** - Setup requires technical knowledge and configuration
 - **Risk-averse investors** - All trading involves risk of capital loss
 
----
-
-## 🔥 Best Polymarket Bot | Top Polymarket Trading Bot | Advanced Polymarket Copy Trading Bot
-
-**Looking for the best Polymarket bot?** This is the most advanced **Polymarket trading bot** and **Polymarket copy trading bot** available with **real profit proof**.
-
-**Key Features:**
-- ✅ Professional Polymarket bot with automated copy trading
-- ✅ Advanced Polymarket trading bot with real-time execution
-- ✅ Feature-rich Polymarket copy trading bot with trade aggregation
-- ✅ Production-ready Polymarket bot architecture
-- ✅ Comprehensive Polymarket trading bot analytics
-- ✅ **Real profit videos demonstrating live profitability**
-
----
-
-## 🎯 What is a Polymarket Bot? What is Polymarket Copy Trading?
-
-**A Polymarket bot** (also known as a **Polymarket trading bot** or **Polymarket copy trading bot**) is an automated trading system that replicates trades from successful Polymarket traders. This professional Polymarket bot monitors top performers on Polymarket prediction markets and executes matching trades in your wallet with intelligent position sizing and risk management.
-
-**Perfect for:**
-- Traders seeking the best Polymarket bot for automated copy trading
-- Investors wanting a reliable Polymarket trading bot for prediction markets
-- DeFi enthusiasts looking for advanced Polymarket copy trading bot solutions
-- Anyone needing professional Polymarket automation and copy trading capabilities
-
----
-
-## Overview | Best Polymarket Bot & Polymarket Trading Bot
-
-**Polymarket Copy Trading Bot v2.0** is the most advanced **Polymarket bot** and **Polymarket trading bot** available. This professional-grade **Polymarket copy trading bot** is designed specifically for Polymarket prediction markets. This advanced automated trading solution automatically replicates trades from top-performing Polymarket traders directly to your wallet with intelligent position sizing, real-time execution, and comprehensive performance tracking.
-
 **Why This is the Best Polymarket Bot:**
 - ✅ Most feature-rich Polymarket trading bot available
 - ✅ Advanced Polymarket copy trading bot with trade aggregation
 - ✅ Professional-grade Polymarket bot architecture
 - ✅ Production-ready Polymarket trading bot solution
 - ✅ **Real profit proof with live demonstration videos**
-
-### How This Polymarket Bot Works | Polymarket Trading Bot Algorithm
-
-This Polymarket copy trading bot implements a sophisticated copy trading algorithm specifically designed for Polymarket prediction markets:
-
-1. **Select Top Traders** - Choose high-performing traders from [Polymarket leaderboard](https://polymarket.com/leaderboard) or analyze metrics via [Predictfolio](https://predictfolio.com)
-2. **Real-Time Monitoring** - Continuously monitors trader activity using Polymarket's Data API with 1-second polling intervals
-3. **Intelligent Position Sizing** - Automatically calculates proportional trade sizes based on your capital vs. trader's capital, with configurable multipliers
-4. **Instant Execution** - Places matching orders on Polymarket CLOB (Central Limit Order Book) in real-time
-5. **Performance Tracking** - Maintains complete trade history in MongoDB with detailed analytics and reporting
 
 ---
 
@@ -191,8 +149,6 @@ python -m src.scripts.setup.system_status
 python -m src.main
 ```
 
-📖 **For detailed setup instructions, see [Getting Started Guide](docs/GETTING_STARTED.md)**
-
 **💡 Need help?** Contact [@dexoryn_here](https://t.me/dexoryn_here) on Telegram for Polymarket bot setup assistance or updated Polymarket trading bot versions.
 
 ---
@@ -209,50 +165,6 @@ python -m src.scripts.setup.help              # Display all Polymarket bot comma
 ### Main Bot | Start Your Polymarket Bot
 ```bash
 python -m src.main                       # Start the Polymarket bot (Polymarket trading bot)
-```
-
-### Wallet Management
-```bash
-python -m src.scripts.wallet.check_proxy_wallet        # Check proxy and main wallet activity
-python -m src.scripts.wallet.check_both_wallets        # Compare two wallet addresses
-python -m src.scripts.wallet.check_my_stats            # View wallet statistics
-python -m src.scripts.wallet.check_recent_activity     # Check recent trading activity
-python -m src.scripts.wallet.check_positions_detailed  # View detailed position information
-python -m src.scripts.wallet.check_pnl_discrepancy     # Check P&L discrepancy analysis
-python -m src.scripts.wallet.verify_allowance         # Verify USDC token allowance
-python -m src.scripts.wallet.check_allowance          # Check and set USDC allowance
-python -m src.scripts.wallet.set_token_allowance      # Set ERC1155 token allowance
-python -m src.scripts.wallet.find_my_eoa              # Find and analyze EOA wallet
-python -m src.scripts.wallet.find_gnosis_safe_proxy   # Find Gnosis Safe proxy wallet
-```
-
-### Position Management (⚠️ Requires CLOB Client Implementation)
-```bash
-# Note: These scripts exist but require full CLOB client implementation
-python -m src.scripts.position.manual_sell            # Manually sell a specific position
-python -m src.scripts.position.sell_large_positions   # Sell large positions
-python -m src.scripts.position.close_stale_positions # Close stale/old positions
-python -m src.scripts.position.close_resolved_positions # Close resolved positions
-python -m src.scripts.position.redeem_resolved_positions # Redeem resolved positions
-```
-
-### Trader Research & Analysis
-```bash
-python -m src.scripts.research.find_best_traders      # Find best performing traders
-python -m src.scripts.research.find_low_risk_traders  # Find low-risk traders with good metrics
-python -m src.scripts.research.scan_best_traders      # Scan and analyze top traders
-python -m src.scripts.research.scan_traders_from_markets # Scan traders from active markets
-```
-
-### Simulation & Backtesting
-```bash
-python -m src.scripts.simulation.simulate_profitability # Simulate profitability for a trader
-python -m src.scripts.simulation.simulate_profitability_old # Old simulation logic
-python -m src.scripts.simulation.run_simulations        # Run comprehensive batch simulations
-python -m src.scripts.simulation.compare_results        # Compare simulation results
-python -m src.scripts.simulation.aggregate_results      # Aggregate trading results across strategies
-python -m src.scripts.simulation.audit_copy_trading     # Audit copy trading algorithm
-python -m src.scripts.simulation.fetch_historical_trades # Fetch and cache historical trade data
 ```
 
 ## Configuration
@@ -275,55 +187,6 @@ Create a `.env` file with the following variables:
 | `TRADE_AGGREGATION_ENABLED` | Enable trade aggregation (default: false) | `true` |
 | `TRADE_AGGREGATION_WINDOW_SECONDS` | Aggregation window (default: 30) | `30` |
 
-### Finding Top Polymarket Traders to Copy | Polymarket Bot Configuration
-
-To maximize your Polymarket bot and Polymarket trading bot success on Polymarket:
-
-1. **Visit [Polymarket Leaderboard](https://polymarket.com/leaderboard)** - Browse top performers
-2. **Analyze Metrics** - Look for traders with:
-   - Positive P&L over extended periods
-   - Win rate >55%
-   - Active trading history (recent trades)
-   - Consistent performance patterns
-3. **Deep Dive Analysis** - Verify detailed stats on [Predictfolio](https://predictfolio.com) for comprehensive trader analytics
-4. **Use Built-in Tools** - Leverage the bot's trader research scripts:
-   ```bash
-   python -m src.scripts.research.find_best_traders      # Find top performers
-   python -m src.scripts.research.find_low_risk_traders  # Find low-risk traders
-   ```
-5. **Configure Bot** - Add selected wallet addresses to `USER_ADDRESSES` in `.env`
-
-## Features
-
-### Core Polymarket Bot Features | Polymarket Trading Bot Capabilities
-
-**This Polymarket copy trading bot includes:**
-
-- **🤖 Automated Copy Trading** - Fully automated Polymarket bot trading with zero manual intervention required
-- **👥 Multi-Trader Support** - Track and copy trades from multiple Polymarket traders simultaneously with independent strategies
-- **📊 Smart Position Sizing** - Intelligent position sizing algorithm that automatically adjusts trade sizes based on your capital vs. trader's capital
-- **⚡ Tiered Multipliers** - Advanced multiplier system that applies different position sizing multipliers based on trade size for optimal risk management
-- **📈 Position Tracking** - Accurate position tracking system that monitors purchases and sells even after balance changes
-- **🔄 Trade Aggregation** - Innovative trade aggregation feature that combines multiple small trades into larger executable orders (reduces gas costs significantly)
-- **⚡ Real-time Execution** - Ultra-fast Polymarket trading bot execution with 1-second polling intervals for instant trade replication
-- **💾 MongoDB Integration** - Enterprise-grade persistent storage of all trades, positions, and performance data
-- **🛡️ Price Protection** - Built-in slippage protection to avoid unfavorable fills and protect your capital
-- **🎨 Professional Logging** - Beautiful colored console output with comprehensive file logging for monitoring and debugging
-
-**This Polymarket bot is the most comprehensive Polymarket trading bot solution available.**
-
-### Advanced Analytics & Research Tools | Polymarket Bot Analysis Features
-
-**This Polymarket trading bot includes powerful analysis tools:**
-
-- **🔍 Trader Discovery** - Find best-performing Polymarket traders with advanced filtering and metrics
-- **📉 Risk Analysis** - Identify low-risk traders with good risk-adjusted returns
-- **🧪 Simulation Engine** - Comprehensive backtesting and simulation tools to test strategies before deploying
-- **📊 Performance Auditing** - Validate Polymarket copy trading bot algorithm accuracy and identify discrepancies
-- **📈 Strategy Comparison** - Compare multiple trading strategies side-by-side with detailed metrics
-- **💡 Market Scanning** - Scan active Polymarket markets to discover profitable trading opportunities
-
-**These advanced features make this the best Polymarket bot for serious traders.**
 
 ## Safety & Risk Management | Polymarket Copy Trading Best Practices
 
@@ -372,38 +235,9 @@ To maximize your Polymarket bot and Polymarket trading bot success on Polymarket
 
 **💡 Need Help?** Contact [@dexoryn_here](https://t.me/dexoryn_here) on Telegram for Polymarket bot setup assistance or updated Polymarket trading bot versions.
 
-## Development
-
-### Running Tests
-
-```bash
-# Run tests (when implemented)
-pytest
-```
-
-### Code Style
-
-This project follows PEP 8 style guidelines. Consider using:
-- `black` for code formatting
-- `flake8` or `pylint` for linting
-- `mypy` for type checking
-
-### Dependencies
-
-Key Python packages:
-- `web3` - Ethereum/Polygon blockchain interaction
-- `pymongo` - MongoDB database operations
-- `httpx` - Async HTTP client
-- `colorama` - Cross-platform colored terminal output
-- `python-dotenv` - Environment variable management
-- `asyncio` - Asynchronous programming (built-in)
-- `websockets` - WebSocket client for RTDS
-
-See `requirements.txt` for complete list.
-
 ## Author & Contact | Polymarket Bot Developer
 
-### 👨‍💻 Dexoryn Labs - Professional Polymarket Bot Developer
+### 👨‍💻 Dexoryn Labs - Professional Polymarket Bot Development Service
 
 **Expert Polymarket Bot & Polymarket Trading Bot Solutions**
 
@@ -488,42 +322,6 @@ Running this Polymarket trading bot? Need help setting up your Polymarket copy t
 
 **Preferred Contact:** Telegram for quick Polymarket bot support and questions
 
-
-## 📝 Technical Notes
-
-**Architecture:** This Polymarket bot is a complete, professional-grade Python implementation with enhanced features and improved performance. The Polymarket trading bot codebase is modular, well-documented, and optimized for production use.
-
-**CLOB Client:** For production Polymarket copy trading bot usage, ensure the CLOB client is fully implemented or use the JavaScript SDK bridge as documented in the setup guide.
-
-**Trade Monitor:** The Polymarket bot trade monitor service (`src/services/trade_monitor.py`) currently contains function stubs. The WebSocket connection logic and trade activity processing need to be implemented before real-time monitoring is functional.  
-**Contact [@dexoryn_here](https://t.me/dexoryn_here) for updated versions with full implementation.**
-
-**WebSocket Compatibility:** This Polymarket trading bot uses `websockets>=12.0` with compatible type annotations. Type annotations use `Any` for WebSocket connections to maintain compatibility across websockets versions.
-
-**Need Help?** Contact [@dexoryn_here](https://t.me/dexoryn_here) on Telegram for Polymarket bot support and updated versions.
-
-**📊 Conversion Status:** See [PYTHON_SCRIPTS_STATUS.md](./PYTHON_SCRIPTS_STATUS.md) for a complete list of converted scripts and their status.
-
-**📁 Project Structure:** See [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md) for detailed file and folder organization by role.
-
-## Documentation | Complete Polymarket Copy Trading Guide
-
-Comprehensive documentation to help you master Polymarket copy trading:
-
-- **[Getting Started Guide](docs/GETTING_STARTED.md)** ⭐ - Complete step-by-step setup for Polymarket copy trading
-- **[Strategy Guide](docs/STRATEGY.md)** ⭐⭐ - Deep dive into copy trading strategies and configuration
-- **[Command Reference](docs/COMMAND_REFERENCE.md)** - Detailed reference for all Polymarket bot commands
-- **[Usage Examples](docs/EXAMPLES.md)** - Real-world Polymarket copy trading examples and use cases
-
-### 📚 Documentation Quick Links
-
-- 🚀 **[Getting Started](docs/GETTING_STARTED.md)** - Start here for first-time Polymarket copy trading setup
-- 📊 **[Strategy Guide](docs/STRATEGY.md)** - Master copy trading strategies and bot configuration
-- 📖 **[Command Reference](docs/COMMAND_REFERENCE.md)** - Complete command reference for Polymarket automation
-- 💡 **[Examples](docs/EXAMPLES.md)** - Real-world Polymarket copy trading scenarios
-- 📁 **[Project Structure](PROJECT_STRUCTURE.md)** - Understand the codebase organization
-- 📊 **[Script Status](PYTHON_SCRIPTS_STATUS.md)** - Track development and conversion status
-
 ---
 
 ## 🌟 Star History & Community | Polymarket Bot Support
@@ -559,13 +357,6 @@ If you find this Polymarket bot, Polymarket trading bot, or Polymarket copy trad
 - polymarket bot python
 - polymarket trading automation
 
-**Long-tail Keywords:**
-- automated polymarket copy trading bot that mirrors top traders
-- live tested profitable polymarket bot
-- real on-chain execution polymarket bot
-- polymarket bot with profit proof videos
-- professional polymarket trading bot with real results
-- best polymarket copy trading bot with live demonstrations
 
 ---
 
