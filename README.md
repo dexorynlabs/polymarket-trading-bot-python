@@ -17,10 +17,7 @@
 
 ### Video 1 — Live Copy Trading Run
 
-<video width="100%" controls>
-  <source src="videos/1.Dexoryn%20Labs%20Crypto%20casino%20+%20Trading%20bot%20development.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+https://github.com/user-attachments/assets/51a7009f-38f6-4148-8ea1-fff75b75586c
 
 - **+$80 profit in ~15 minutes**
 - Bot ran unattended during this session
@@ -28,11 +25,7 @@
 
 ### Video 2 — Second Run to confirm performance 
 
-<video width="100%" controls>
-  <source src="videos/2.Dexoryn%20Labs%20Crypto%20casino%20+%20Trading%20bot%20development%202.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
+https://github.com/user-attachments/assets/4b243ad0-d668-47f9-9d7c-71e084f5e76e
 
 - **Additional +$230 profit in next 15 mins**
 - Same bot, same logic, separate run
