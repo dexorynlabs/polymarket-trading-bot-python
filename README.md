@@ -1,6 +1,6 @@
 # Polymarket Bot | Polymarket Trading Bot | Polymarket Copy Trading Bot  
 
-> **Automated Polymarket copy trading bot that mirrors top traders in real time**  
+> **Automated Polymarket copy trading bot that mirrors top traders in real time, especially gabagool22**  
 > **Live tested • Profitable • Real on-chain execution**
 
 **🔍 Search Keywords:** `polymarket bot`, `polymarket trading bot`, `polymarket copy trading bot`, `polymarket copy trading`, `automated polymarket trading`, `polymarket trading automation`, `polymarket prediction markets bot`, `best polymarket bot`, `top polymarket trading bot`
@@ -210,6 +210,22 @@ Create a `.env` file with the following variables:
 6. Run system status check before starting: `python -m src.scripts.setup.system_status`
 
 **💡 Need Help?** Contact [@dexoryn_here](https://t.me/dexoryn_here) on Telegram for Polymarket bot setup assistance or updated Polymarket trading bot versions.
+
+---
+
+## FAQ
+
+**Can I copy traders other than Gabagool22?**  
+Yes. Any wallet address can be configured.
+
+**Does this work on all Polymarket markets?**  
+It supports standard Polymarket markets. Edge cases may vary.
+
+**What happens if a transaction fails?**  
+The bot logs failures and retries when possible.
+
+**Is this open source?**  
+Yes. But also providing better performance premium version too.
 
 ## Author & Contact | Polymarket Bot Developer
 
