@@ -6,7 +6,7 @@
 **🔍 Search Keywords:** `polymarket bot`, `polymarket trading bot`, `polymarket copy trading bot`, `polymarket copy trading`, `automated polymarket trading`, `polymarket trading automation`, `polymarket prediction markets bot`, `best polymarket bot`, `top polymarket trading bot`
 
 > **Need help running this project or want an updated version?**  
-> 📱 **Telegram**: [t.me/dexoryn_here](https://t.me/dexoryn_here) 
+> 📱 **Telegram**: [t.me/dexoryn_here](https://t.me/dexoryn_here) | 🎮 **Discord**: `.dexoryn` 
 ---
 
 ## 🎥 Live Profit Videos : **Copy trading Gabagool22**  
@@ -241,6 +241,7 @@ We specialize in building the most advanced **Polymarket bot**, **Polymarket tra
 **Reach out through any of these channels:**
 
 - **💬 Telegram**: [@dexoryn_here](https://t.me/dexoryn_here) - *Fastest response for Polymarket bot support*
+- **🎮 Discord**: `.dexoryn` - *Connect for Polymarket bot discussions and community*
 - **🐦 Twitter**: [@dexoryn](https://x.com/dexoryn) - *Follow for Polymarket trading bot updates*
 - **💻 GitHub**: [@dexorynLabs](https://github.com/dexorynLabs) - *View Polymarket bot source code and contribute*
 
