@@ -80,8 +80,7 @@ While other Polymarket bots show screenshots or claim profitability, **this Poly
 - **Optimized folder structure** - Centralized data management (`data/` directory) for better performance and organization
 - **Async-first design** - Built on Python's `asyncio` for maximum efficiency and low latency
 - **Smart caching system** - Intelligent data caching reduces API calls and improves response times
-- **Modular codebase** - Clean separation of concerns enables easy maintenance and extensibility
-
+- 
 ### 💡 **Advanced Features You Won't Find Elsewhere**
 
 - **Trade aggregation** - Combines multiple small trades into larger executable orders (reduces gas costs significantly)
@@ -89,7 +88,6 @@ While other Polymarket bots show screenshots or claim profitability, **this Poly
 - **Comprehensive analytics** - Built-in simulation engine, backtesting, and performance auditing tools
 - **Multi-trader support** - Track and copy from multiple traders simultaneously with independent strategies
 - **Real-time monitoring** - Sub-second trade detection and execution (1-second polling interval)
-
 
 ### 📈 **Comparison Table**
 
@@ -260,10 +258,6 @@ Contributions are welcome! Please:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## License
-
-ISC License - See [LICENSE](LICENSE) file for details.
-
 ## ⚖️ Legal Disclaimer
 
 **Trading on Polymarket involves significant risk of financial loss** 
@@ -271,7 +265,6 @@ ISC License - See [LICENSE](LICENSE) file for details.
 - Past performance does not guarantee future results
 - The developers (Dexoryn) are not responsible for any financial losses incurred while using this bot
 - Users are solely responsible for their trading decisions and capital management
-- Always comply with local regulations regarding automated trading and prediction markets
 
 **Use this bot at your own risk and only with funds you can afford to lose.**
 
@@ -283,7 +276,6 @@ If you find this Polymarket bot, Polymarket trading bot, or Polymarket copy trad
 
 - ⭐ **Starring the repository** - Help others discover this Polymarket bot solution
 - 🐛 **Reporting issues** - Help improve the Polymarket trading bot by reporting bugs
-- 💡 **Suggesting features** - Share your ideas for new Polymarket bot features
 - 🤝 **Contributing** - Submit pull requests to enhance the Polymarket copy trading bot
 
 **Need help or updated version?** Contact [@dexoryn_here](https://t.me/dexoryn_here) on Telegram.
