@@ -3,7 +3,7 @@
 > **Automated Polymarket copy trading bot that mirrors top traders in real time, especially gabagool22**  
 > **Live tested • Profitable • Real on-chain execution**
 
-**🔍 Search Keywords:** `polymarket bot`, `polymarket trading bot`, `polymarket copy trading bot`, `polymarket copy trading`, `automated polymarket trading`, `polymarket trading automation`, `polymarket prediction markets bot`, `best polymarket bot`, `top polymarket trading bot`
+**🔍 Search Keywords:** `polymarket bot`, `polymarket trading bot`, `polymarket copy trading bot`, `automated polymarket trading`, `polymarket trading automation`, `top polymarket trading bot`
 
 > **Need help running this project or want an updated version?**  
 > 📱 **Telegram**: [t.me/dexoryn_here](https://t.me/dexoryn_here) | 🎮 **Discord**: `.dexoryn` 
