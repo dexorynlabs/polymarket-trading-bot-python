@@ -1,5 +1,7 @@
 # Polymarket Bot | Polymarket Trading Bot | Polymarket Copy Trading Bot  
 
+**Languages:** [English](README.md) · [中文](README.zh-CN.md) · [Русский](README.ru.md)
+
 > **Automated Polymarket copy trading bot that mirrors active traders in real time**  
 > **Live tested • Real on-chain execution • Swap targets anytime**
 
