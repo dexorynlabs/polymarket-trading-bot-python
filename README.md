@@ -76,6 +76,18 @@ What we saw:
 - ✅ Logs and MongoDB history updated as expected
 - ✅ Failures were isolated to market/order edge cases, not "bot died when Gabagool22 left"
 
+#### Perfect copy-trading result — mirroring **securebet**
+
+After switching targets, we copied [**securebet**](https://polymarket.com/@securebet) and captured this side-by-side:
+
+<p align="center">
+  <img src="videos/Screenshot/securebet.jpg" alt="Copy trading PnL: bot wallet vs securebet target — matching chart shape" width="100%"/>
+</p>
+
+**This is what ideal copy trading looks like.** Your bot wallet (left) and the target trader (right) show the **same PnL chart shape** for the day—the same flat period, dip, and recovery spike at the end. Dollar amounts differ because of your sizing (`COPY_SIZE`, multipliers, and balance), but the **curve tracks the leader**, which means trades are being detected and mirrored in sync—not lagging behind or fighting the strategy.
+
+Same session, same markets in the activity/history tabs (e.g. the temperature markets visible in the screenshot). That alignment is the proof traders care about: **follow the wallet, get the same equity curve pattern.**
+
 **Takeaway for traders:** This bot is built to follow **whoever you configure**, not one celebrity wallet. When a trader stops working for you, **change the address—not the bot.** Past Gabagool22 results do not guarantee future results on any target.
 
 ---
