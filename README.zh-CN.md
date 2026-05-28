@@ -20,7 +20,7 @@
 
 ### 视频 1 — 实盘跟单运行
 
-https://github.com/user-attachments/assets/51a7009f-38f6-4148-8ea1-fff75b75586c
+https://github.com/user-attachments/assets/2194ef92-b0f7-40e1-9835-4d2965e85e81
 
 - **约 15 分钟内 +$80 盈利**
 - 本次会话全程无人值守
@@ -28,7 +28,7 @@ https://github.com/user-attachments/assets/51a7009f-38f6-4148-8ea1-fff75b75586c
 
 ### 视频 2 — 第二次运行（验证）
 
-https://github.com/user-attachments/assets/4b243ad0-d668-47f9-9d7c-71e084f5e76e
+https://github.com/user-attachments/assets/df3a6791-89b5-4230-ae40-fb7130dcadc4
 
 - **随后约 15 分钟再 +$230**
 - 同一机器人、同一逻辑、独立运行
@@ -83,7 +83,7 @@ Gabagool22 最终**交易减少，不再适合作为跟单目标**——成交�
 更换目标后，我们跟单 [**securebet**](https://polymarket.com/@securebet)，并拍下这张对比图：
 
 <p align="center">
-  <img src="videos/Screenshot/securebet.jpg" alt="跟单盈亏：机器人钱包 vs securebet 目标 — 曲线形状一致" width="100%"/>
+  <img src="Realtradehistory/securebet.jpg" alt="跟单盈亏：机器人钱包 vs securebet 目标 — 曲线形状一致" width="100%"/>
 </p>
 
 **这就是理想跟单应有的样子。** 左侧为你的机器人钱包，右侧为目标交易者，当日 **盈亏曲线形状一致**——相同的横盘、回撤与末尾反弹。美元金额因你的仓位设置（`COPY_SIZE`、倍数与余额）而不同，但**曲线跟随领头钱包**，说明交易被及时检测并同步镜像，而非滞后或偏离策略。
