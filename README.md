@@ -247,6 +247,11 @@ Yes. A maintained premium build with extra support is also available via Telegra
 - **Discord**: `dexoryn777`
 - **Twitter**: [@dexoryn](https://x.com/dexoryn)
 - **GitHub**: [@dexorynLabs](https://github.com/dexorynLabs)
+- **WeChat**: scan to add **DexorynWe**
+
+<p align="center">
+  <img src="wechat.png" alt="WeChat QR code — scan to add DexorynWe as a friend" width="280"/>
+</p>
 
 ---
 

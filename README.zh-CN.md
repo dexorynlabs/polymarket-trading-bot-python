@@ -247,6 +247,11 @@ python -m src.scripts.research.scan_best_traders
 - **Discord**：`dexoryn777`
 - **Twitter**：[@dexoryn](https://x.com/dexoryn)
 - **GitHub**：[@dexorynLabs](https://github.com/dexorynLabs)
+- **微信**：扫码添加 **DexorynWe**
+
+<p align="center">
+  <img src="wechat.png" alt="微信二维码 — 扫码添加 DexorynWe 为好友" width="280"/>
+</p>
 
 ---
 

@@ -247,6 +247,11 @@ python -m src.scripts.research.scan_best_traders
 - **Discord**: `dexoryn777`
 - **Twitter**: [@dexoryn](https://x.com/dexoryn)
 - **GitHub**: [@dexorynLabs](https://github.com/dexorynLabs)
+- **WeChat**: отсканируйте, чтобы добавить **DexorynWe**
+
+<p align="center">
+  <img src="wechat.png" alt="QR-код WeChat — добавить DexorynWe в друзья" width="280"/>
+</p>
 
 ---
 
