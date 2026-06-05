@@ -155,17 +155,14 @@ Other Polymarket bots often stop at screenshots. This repo includes **video proo
 ### Installation
 
 ```bash
-git clone https://github.com/dexorynLabs/polymarket-copy-trading-bot-v2.0.git
-cd polymarket-copy-trading-bot-v2.0
+git clone https://github.com/dexorynlabs/polymarket-trading-bot-python.git
+cd polymarket-trading-bot-python
 
 pip install -r requirements.txt
 
-python -m src.scripts.setup.setup
-python -m src.scripts.setup.system_status
-python -m src.main
+# Edit config.yaml — set target_wallet and mode (see Configuration below)
+python -m app.main
 ```
-
-Optional: `pip install -e .` then run `polymarket-bot` (see `pyproject.toml`).
 
 **Help:** [@dexoryn](https://t.me/dexoryn) on Telegram.
 
@@ -173,53 +170,44 @@ Optional: `pip install -e .` then run `polymarket-bot` (see `pyproject.toml`).
 
 ## Configuration
 
-Copy `.env.example` to `.env` and fill in secrets. The setup wizard writes most fields for you.
+Edit `config.yaml` in the project root. Start with `mode: dry_run` to verify the bot detects and logs target fills before going live.
 
-### Essential variables
+### Essential settings
 
-| Variable | Description | Example |
-|----------|-------------|---------|
-| `USER_ADDRESSES` | Wallets to copy (comma-separated or JSON array) | `'0xABC..., 0xDEF...'` |
-| `PROXY_WALLET` | Your Polygon trading wallet | `'0x123...'` |
-| `PRIVATE_KEY` | Private key (**no** `0x` prefix) | `'abc...'` |
-| `MONGO_URI` | MongoDB connection string | `'mongodb+srv://...'` |
-| `RPC_URL` | Polygon RPC | `'https://polygon-mainnet...'` |
-| `USDC_CONTRACT_ADDRESS` | USDC on Polygon (default in example) | `'0x2791...'` |
-| `CLOB_HTTP_URL` | Polymarket CLOB API | `'https://clob.polymarket.com'` |
-| `COPY_STRATEGY` | `PERCENTAGE`, `FIXED`, or `ADAPTIVE` | `PERCENTAGE` |
-| `COPY_SIZE` | % or USD depending on strategy | `10.0` |
-| `FETCH_INTERVAL` | Poll interval in seconds (default `1`) | `1` |
-| `PREVIEW_MODE` | `true` = monitor only, no orders | `false` |
-| `TRADE_AGGREGATION_ENABLED` | Batch small trades (default `false`) | `true` |
-| `TRADE_AGGREGATION_WINDOW_SECONDS` | Wait time before batching (default `300`) | `300` |
+| Setting | Description | Example |
+|---------|-------------|---------|
+| `target_wallet` | Polymarket wallet to copy | `0x6031b6e...` |
+| `mode` | `dry_run` logs only; `real` submits orders | `dry_run` |
+| `sizing.mode` | `fixed` USD per copy or `percent_of_target` | `fixed` |
+| `sizing.fixed_usd_per_fill` | USD per copy (when `sizing.mode=fixed`) | `10.0` |
+| `sizing.percent_of_target` | Fraction of target chunk (when `sizing.mode=percent_of_target`) | `0.05` |
+| `sizing.max_usd_total_in_positions` | Global cap on open position cost | `100.0` |
+| `sizing.min_target_shares_to_copy` | Batch threshold before copying | `10` |
+| `execution.order_type` | `taker` (FAK) or `maker` (GTC) | `taker` |
+| `slippage.entry_bps_max` | Max slippage above target price (bps) | `200` |
 
-For `TIERED_MULTIPLIERS`, safety caps, and legacy `TRADE_MULTIPLIER`, see **`.env.example`**.
+For `mode: real`, uncomment and fill the `polymarket:` section with `private_key`, `wallet_address`, `api_key`, `api_secret`, and `passphrase`. See **`config.yaml`** for maker settings, position expiry, dedup, and watchdog options.
 
-### Find active traders to copy
+### Pick a trader to copy
 
-```bash
-python -m src.scripts.research.find_best_traders
-python -m src.scripts.research.scan_best_traders
-```
-
-Always verify wallet activity and risk before copying.
+Choose an active Polymarket wallet and set `target_wallet` in `config.yaml`. Verify activity and risk on [polymarket.com](https://polymarket.com) before copying.
 
 ---
 
 ## Safety & Risk Management
 
-⚠️ **This bot places real trades with real funds.**
+⚠️ **This bot places real trades with real funds when `mode: real`.**
 
-- Start small; use `PREVIEW_MODE=true` first
+- Start with `mode: dry_run` and confirm fills are mirrored in logs
 - **Rotate targets** when a trader goes quiet—Gabagool22 is a lesson, not a permanent setting
-- Copy **multiple** wallets when possible; don't rely on one address
-- Check logs daily; run `python -m src.scripts.setup.system_status` before live runs
+- Set `sizing.max_usd_total_in_positions` conservatively
+- Check `logs/tracecopy.log` regularly; state persists in `state.json`
 - Past performance (including the videos) **does not** guarantee future results
 
 1. Use a dedicated wallet with limited balance  
-2. Never commit `.env` or share `PRIVATE_KEY`  
+2. Never commit `config.yaml` with live secrets or share `private_key`  
 3. Know how to stop the bot (`Ctrl+C`)  
-4. Research wallets before adding them to `USER_ADDRESSES`
+4. Research wallets before setting `target_wallet`
 
 ---
 
