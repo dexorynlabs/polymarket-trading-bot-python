@@ -250,7 +250,9 @@ python -m src.scripts.research.scan_best_traders
 - **微信**：扫码添加 **DexorynWe**
 
 <p align="center">
-  <img src="wechat.png" alt="微信二维码 — 扫码添加 DexorynWe 为好友" width="280"/>
+  <img src="dexoryn_tg.jpg" alt="Telegram 二维码 — @dexoryn" width="280"/>
+  &nbsp;&nbsp;
+  <img src="dexoryn_wechat.png" alt="微信二维码 — 扫码添加 DexorynWe 为好友" width="280"/>
 </p>
 
 ---
