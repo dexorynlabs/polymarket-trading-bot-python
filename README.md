@@ -250,9 +250,9 @@ Yes. A maintained premium build with extra support is also available via Telegra
 - **WeChat**: scan to add **DexorynWe**
 
 <p align="center">
-  <img src="dexoryn_tg.jpg" alt="Telegram QR code — @dexoryn" width="280"/>
+  <img src="dexoryn_tg.jpg" alt="Telegram QR code — @dexoryn" height="280"/>
   &nbsp;&nbsp;
-  <img src="dexoryn_wechat.png" alt="WeChat QR code — scan to add DexorynWe as a friend" width="280"/>
+  <img src="dexoryn_wechat.png" alt="WeChat QR code — scan to add DexorynWe as a friend" height="280"/>
 </p>
 
 ---

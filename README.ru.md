@@ -250,9 +250,9 @@ python -m src.scripts.research.scan_best_traders
 - **WeChat**: отсканируйте, чтобы добавить **DexorynWe**
 
 <p align="center">
-  <img src="dexoryn_tg.jpg" alt="QR-код Telegram — @dexoryn" width="280"/>
+  <img src="dexoryn_tg.jpg" alt="QR-код Telegram — @dexoryn" height="280"/>
   &nbsp;&nbsp;
-  <img src="dexoryn_wechat.png" alt="QR-код WeChat — добавить DexorynWe в друзья" width="280"/>
+  <img src="dexoryn_wechat.png" alt="QR-код WeChat — добавить DexorynWe в друзья" height="280"/>
 </p>
 
 ---
