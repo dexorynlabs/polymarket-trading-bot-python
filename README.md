@@ -6,7 +6,7 @@
 > **Live tested • Real on-chain execution • Swap targets anytime**
 
 > **Need help or an updated build?**  
-> 📱 **Telegram**: [t.me/dexoryn777](https://t.me/dexoryn777) | 🎮 **Discord**: `dexoryn777`
+> 📱 **Telegram**: [t.me/dexoryn](https://t.me/dexoryn) | 🎮 **Discord**: `dexoryn_`
 
 ---
 
@@ -167,7 +167,7 @@ python -m src.main
 
 Optional: `pip install -e .` then run `polymarket-bot` (see `pyproject.toml`).
 
-**Help:** [@dexoryn777](https://t.me/dexoryn777) on Telegram.
+**Help:** [@dexoryn](https://t.me/dexoryn) on Telegram.
 
 ---
 
@@ -243,8 +243,8 @@ Yes. A maintained premium build with extra support is also available via Telegra
 
 **Dexoryn Labs** — Polymarket copy-trading automation
 
-- **Telegram**: [@dexoryn777](https://t.me/dexoryn777) (fastest)
-- **Discord**: `dexoryn777`
+- **Telegram**: [@dexoryn](https://t.me/dexoryn) (fastest)
+- **Discord**: `dexoryn_`
 - **Twitter**: [@dexoryn](https://x.com/dexoryn)
 - **GitHub**: [@dexorynLabs](https://github.com/dexorynLabs)
 - **WeChat**: scan to add **DexorynWe**
@@ -272,4 +272,4 @@ Trading on Polymarket involves **substantial risk of loss**. Dexoryn is not resp
 
 ---
 
-If this project helps you, consider ⭐ starring the repo or opening issues/PRs. Questions: [@dexoryn777](https://t.me/dexoryn777).
+If this project helps you, consider ⭐ starring the repo or opening issues/PRs. Questions: [@dexoryn](https://t.me/dexoryn).

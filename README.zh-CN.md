@@ -6,7 +6,7 @@
 > **实盘验证 • 真实链上执行 • 随时更换跟单目标**
 
 > **需要帮助或更新版本？**  
-> 📱 **Telegram**：[t.me/dexoryn777](https://t.me/dexoryn777) | 🎮 **Discord**：`dexoryn777`
+> 📱 **Telegram**：[t.me/dexoryn](https://t.me/dexoryn) | 🎮 **Discord**：`dexoryn_`
 
 ---
 
@@ -167,7 +167,7 @@ python -m src.main
 
 可选：`pip install -e .` 后运行 `polymarket-bot`（见 `pyproject.toml`）。
 
-**帮助：** Telegram [@dexoryn777](https://t.me/dexoryn777)
+**帮助：** Telegram [@dexoryn](https://t.me/dexoryn)
 
 ---
 
@@ -243,8 +243,8 @@ python -m src.scripts.research.scan_best_traders
 
 **Dexoryn Labs** — Polymarket 跟单自动化
 
-- **Telegram**：[@dexoryn777](https://t.me/dexoryn777)（回复最快）
-- **Discord**：`dexoryn777`
+- **Telegram**：[@dexoryn](https://t.me/dexoryn)（回复最快）
+- **Discord**：`dexoryn_`
 - **Twitter**：[@dexoryn](https://x.com/dexoryn)
 - **GitHub**：[@dexorynLabs](https://github.com/dexorynLabs)
 - **微信**：扫码添加 **DexorynWe**
@@ -272,4 +272,4 @@ python -m src.scripts.research.scan_best_traders
 
 ---
 
-若本项目对您有帮助，欢迎 ⭐ Star 本仓库或提交 Issue/PR。问题咨询：Telegram [@dexoryn777](https://t.me/dexoryn777)。
+若本项目对您有帮助，欢迎 ⭐ Star 本仓库或提交 Issue/PR。问题咨询：Telegram [@dexoryn](https://t.me/dexoryn)。
