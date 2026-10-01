@@ -2,7 +2,7 @@
 
 **语言：** [English](../README.md) · [中文](README.zh-CN.md) · [Русский](README.ru.md)
 
-> **一个仓库，四个 Polymarket 机器人 — 由每天在 Polymarket 上实盘做市的团队构建与运营。**
+> **一个仓库，五个 Polymarket 机器人 — 由每天在 Polymarket 上实盘做市的团队构建与运营。**
 > **开源核心 • 默认模拟/干跑 • 真实链上执行 • Python**
 
 > **需要帮助或生产版本？**
@@ -17,9 +17,10 @@
 | **跟单机器人** | ✅ 实盘验证，已开源 | 实时镜像领头钱包 — 多钱包、预测市场与永续、Web 仪表盘 | [`copy-trading-bot/`](../copy-trading-bot/) |
 | **Polymarket ↔ Kalshi 套利机器人** | 🚧 开发中 | 匹配两个平台上的同一事件，计算扣费后的价差 | [`kalshi-arbitrage-bot/`](../kalshi-arbitrage-bot/) |
 | **做市机器人** | 🚧 演示版计划中 | 双边报价 + 库存限制 — 我们实盘做市系统的参考实现 | [`market-maker-bot/`](../market-maker-bot/) |
-| **1 美分狙击机器人** | 🚧 演示版计划中 | 扫描冷门结果的极低价卖单，小仓位尾部入场 | [`one-cent-sniper-bot/`](../one-cent-sniper-bot/) |
+| **1 美分狙击机器人** | 🚧 演示版计划中 | 扫描冷门结果的极低价卖单，小仓位尾部入场 | [`1c-sniper-bot/`](../1c-sniper-bot/) |
+| **99 美分狙击机器人** | 🚧 演示版计划中 | 周期末狙击：在结算前以 97–99 美分买入近乎确定的结果，收割最后几美分 | [`99c-sniper-bot/`](../99c-sniper-bot/) |
 
-**从这里开始：** 跟单机器人是已完成的产品，其余三个将逐个发布 — 关注本仓库或 [@Dexoryn](https://x.com/Dexoryn) 获取每次发布。
+**从这里开始：** 跟单机器人是已完成的产品，其余四个将逐个发布 — 关注本仓库或 [@Dexoryn](https://x.com/Dexoryn) 获取每次发布。
 
 独立跟单仓库：[中文版](https://github.com/dexoryn-china/polymarket-copy-trading-bot) · [English](https://github.com/dexorynlabs/polymarket-copy-trading-bot)
 

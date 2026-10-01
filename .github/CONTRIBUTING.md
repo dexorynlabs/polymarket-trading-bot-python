@@ -17,7 +17,8 @@ This is a monorepo. Each bot lives in its own self-contained folder with its own
 | `copy-trading-bot/` | Copy trading bot (canonical repo: [polymarket-copy-trading-bot](https://github.com/dexorynlabs/polymarket-copy-trading-bot)) |
 | `kalshi-arbitrage-bot/` | Polymarket ↔ Kalshi arbitrage bot |
 | `market-maker-bot/` | Market maker bot (demo) |
-| `one-cent-sniper-bot/` | 1¢ sniper bot (demo) |
+| `1c-sniper-bot/` | 1¢ sniper bot (demo) |
+| `99c-sniper-bot/` | 99¢ / end-cycle sniper bot (demo) |
 
 Bots do not import from each other. Keep changes inside one bot folder per PR.
 

@@ -1,1 +1,1 @@
-Polymarket trading bots — Kalshi arbitrage, market maker, 1¢ sniper, copy trading. Python. Support: t.me/dexoryn
+Polymarket trading bots — Kalshi arbitrage, market maker, 1¢ & 99¢ snipers, copy trading. Python. Support: t.me/dexoryn

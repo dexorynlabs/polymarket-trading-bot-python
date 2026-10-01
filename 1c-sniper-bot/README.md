@@ -2,7 +2,7 @@
 
 > Part of the [Polymarket Trading Bots](../README.md) pack · **Status: 🚧 demo version planned**
 
-A focused **Polymarket sniper bot** for long-shot outcomes: it scans order books for asks at or near the minimum tick (1¢), filters by liquidity and time-to-resolution, and places small, capped tail entries. One tactic, done cleanly.
+A focused **Polymarket sniper bot** for long-shot outcomes: it scans order books for asks at or near the minimum tick (1¢), filters by liquidity and time-to-resolution, and places small, capped tail entries. One tactic, done cleanly. The mirror image of the [99¢ Sniper Bot](../99c-sniper-bot/) - many small losses for the occasional large win.
 
 ## What the demo will include
 
@@ -22,4 +22,4 @@ Coming with the first release. The folder will be self-contained: `requirements.
 
 ---
 
-← Back to the [bot pack](../README.md) · Launch post: [@Dexoryn](https://x.com/Dexoryn) · Questions: [Telegram @dexoryn](https://t.me/dexoryn).
+← Back to the [bot pack](../README.md) · Pair it with the [99¢ Sniper Bot](../99c-sniper-bot/) · Launch post: [@Dexoryn](https://x.com/Dexoryn) · Questions: [Telegram @dexoryn](https://t.me/dexoryn).
