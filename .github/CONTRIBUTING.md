@@ -4,30 +4,43 @@ Thanks for helping improve this project. Issues and pull requests are welcome.
 
 ## Before you start
 
-- Read the [README](../README.md) for setup and safety notes.
+- Read the [README](../README.md) for the bot list and safety notes.
 - **Never commit secrets** - `config.yaml`, `targets.yaml`, `settings.yaml`, wallet keys, or API credentials.
-- Trading bots carry financial risk. Test in `dry_run` before suggesting changes that affect live execution.
+- Trading bots carry financial risk. Test in `dry_run` / paper mode before suggesting changes that affect live execution.
+
+## Repository layout
+
+This is a monorepo. Each bot lives in its own self-contained folder with its own README, `requirements.txt`, config example, and tests:
+
+| Folder | Bot |
+|--------|-----|
+| `copy-trading-bot/` | Copy trading bot (canonical repo: [polymarket-copy-trading-bot](https://github.com/dexorynlabs/polymarket-copy-trading-bot)) |
+| `kalshi-arbitrage-bot/` | Polymarket ↔ Kalshi arbitrage bot |
+| `market-maker-bot/` | Market maker bot (demo) |
+| `one-cent-sniper-bot/` | 1¢ sniper bot (demo) |
+
+Bots do not import from each other. Keep changes inside one bot folder per PR.
 
 ## Development setup
 
 ```bash
-git clone https://github.com/dexorynlabs/polymarket-trading-bot-python.git
-cd polymarket-trading-bot-python
+git clone https://github.com/dexorynlabs/polymarket-trading-bots.git
+cd polymarket-trading-bots/<bot-folder>
 
 pip install -r requirements.txt
-pip install -r requirements-dev.txt
+pip install -r requirements-dev.txt   # if present
 
 cp config.yaml.example config.yaml
 pytest
 ```
 
-Optional UI work: see [`ui/README.md`](../ui/README.md).
+Optional UI work for the copy bot: see [`copy-trading-bot/ui/README.md`](../copy-trading-bot/ui/README.md).
 
 ## Pull requests
 
 1. Fork the repo and create a branch from `main` (e.g. `feature/short-description`).
 2. Keep changes focused - one logical change per PR when possible.
-3. Run tests: `pytest`
+3. Run tests inside the bot folder you changed: `pytest`
 4. Open a PR with a clear summary and test notes.
 
 Commit messages in this repo typically use prefixes like `feat:`, `fix:`, `docs:`, `test:`, or `perf:`.

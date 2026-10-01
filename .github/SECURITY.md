@@ -16,16 +16,16 @@ Security fixes are applied to the latest release on the `main` branch.
 Report privately via:
 
 - **Telegram**: [@dexoryn](https://t.me/dexoryn) (preferred)
-- **GitHub**: [Private vulnerability report](https://github.com/dexorynlabs/polymarket-trading-bot-python/security/advisories/new) if you have access
+- **GitHub**: [Private vulnerability report](https://github.com/dexorynlabs/polymarket-trading-bots/security/advisories/new) if you have access
 
 Include steps to reproduce, affected versions, and impact when possible. We aim to acknowledge reports within a few business days.
 
 ## User security practices
 
-This bot handles wallets and can place real trades. Please:
+The bots in this repo handle wallets and can place real trades. Please:
 
 - Never commit `config.yaml`, `targets.yaml`, or `settings.yaml` with live secrets
-- Use `mode: dry_run` until behavior is verified
+- Use `mode: dry_run` / paper mode until behavior is verified
 - Set `web.token` before exposing the dashboard beyond localhost
 - Use a dedicated wallet with limited funds for automation
 - Rotate API keys if they may have been exposed

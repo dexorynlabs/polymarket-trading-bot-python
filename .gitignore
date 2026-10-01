@@ -1,9 +1,9 @@
-# Secrets & local config
+# Secrets & local config (any bot folder)
 config.yaml
 .env
 .env.*
 !.env.example
-!ui/.env.mock
+!**/ui/.env.mock
 *.local
 
 # Runtime state (written by the bot)
@@ -30,10 +30,10 @@ __pycache__/
 htmlcov/
 
 # Web UI (app/web/static is the build output of ui/)
-ui/node_modules/
-ui/dist/
+**/ui/node_modules/
+**/ui/dist/
 *.tsbuildinfo
-app/web/static/
+**/app/web/static/
 
 # Scratch
 .smoke/

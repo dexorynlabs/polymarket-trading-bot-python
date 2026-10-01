@@ -7,8 +7,19 @@ on:
     branches: [main, master]
 
 jobs:
-  lint-import:
+  # Each bot folder is self-contained. Add a folder here once it has a
+  # requirements.txt and a tests/ directory; a bot that is still README-only
+  # does not affect the badge.
+  test:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        bot:
+          - copy-trading-bot
+    defaults:
+      run:
+        working-directory: ${{ matrix.bot }}
     steps:
       - uses: actions/checkout@v4
 
@@ -18,7 +29,9 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
+          if [ -f requirements-dev.txt ]; then pip install -r requirements-dev.txt; fi
 
-      - name: Verify imports
-        run: python -c "from app.core.poller import Poller; from app.core.trader import CopyTrader; from app.pm.clob import ClobClient"
+      - name: Run tests
+        run: pytest -q
